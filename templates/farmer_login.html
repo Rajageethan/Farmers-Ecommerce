@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('C:\\Design_project\\static\\images\\paddy.jpg'); 
+      background-size: cover;
+      background-position: center;
+    }
+    .container {
+      width: 300px;
+      margin: 100px auto;
+      background:transparent;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form action="/farmer_login" method="POST">
+      <input type="text" placeholder="Username" name="username" required>
+      <input type="password" placeholder="Password" name="password" required>
+      <input type="submit" value="Login">
+    </form>
+    <p>Don't have an account? <a href="{{ url_for('farmer_signup') }}">Sign Up</a></p>
+  </div>
+</body>
+</html>
+   

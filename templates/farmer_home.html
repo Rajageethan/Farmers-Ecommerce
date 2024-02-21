@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Dashboard - HOME GROWN HEAVEN</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100vh;
+            overflow-y: visible;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        header {
+            background: linear-gradient(to right, #8bc34a, #cddc39);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background: #8bc34a;
+            padding: 20px 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li:last-child {
+            margin-right: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background 0.3s;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            background: #cddc39;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .product-form {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            flex: 0 0 calc(30% - 20px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-form label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .product-form input[type="text"],
+        .product-form textarea,
+        .product-form input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .product-form button {
+            background: #8bc34a;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 16px;
+        }
+
+        .product-form button:hover {
+            background: #cddc39;
+        }
+
+        footer {
+            background: linear-gradient(to right, #8bc34a, #cddc39);
+            color: #fff;
+            text-align: center;
+            padding: 50px 0;
+            clear: both;
+            position: relative;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+            font-size: 18px;
+        }
+
+        footer a:hover {
+            color: #8bc34a;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 20px solid #fff;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Farmer Dashboard - HOME GROWN HEAVEN</h1>
+    <p>List Your Products</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#" class="category-filter" data-category="all">All</a></li>
+        <li><a href="#" class="category-filter" data-category="fruits">Fruits</a></li>
+        <li><a href="#" class="category-filter" data-category="vegetables">Vegetables</a></li>
+        <li><a href="#" class="category-filter" data-category="grains">Grains</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <!-- Product form for farmers to list their products -->
+    <div class="product-form">
+        <form id="product-form">
+            <label for="product-name">Product Name:</label>
+            <input type="text" id="product-name" name="product-name" required>
+            <label for="product-category">Category:</label>
+            <select id="product-category" name="product-category" required>
+                <option value="">Select Category</option>
+                <option value="fruits">Fruits</option>
+                <option value="vegetables">Vegetables</option>
+                <option value="grains">Grains</option>
+            </select>
+            <label for="product-description">Description:</label>
+            <textarea id="product-description" name="product-description" rows="4" required></textarea>
+            <label for="product-price">Price:</label>
+            <input type="text" id="product-price" name="product-price" required>
+            <label for="product-image">Image:</label>
+            <input type="file" id="product-image" name="product-image" accept="image/*" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Your E-commerce Store. All Rights Reserved.</p>
+    <p>
+        <a href="#">Terms and Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Refund Policy</a>
+    </p>
+</footer>
+
+</body>
+</html>
